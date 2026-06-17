@@ -49,106 +49,115 @@ export default function AuthPage({ onBack }) {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex bg-white">
       {/* Left Side - Brand & Illustration */}
-      <div className="hidden lg:flex w-1/2 bg-gradient-primary text-white flex-col justify-center items-center p-12 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-light opacity-10 rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-light opacity-10 rounded-full"></div>
+      <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white flex-col justify-center items-center p-12 relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-400 to-transparent opacity-20 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-br from-purple-400 to-transparent opacity-20 rounded-full mix-blend-multiply filter blur-3xl animate-float-slow"></div>
+          <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-gradient-to-br from-cyan-400 to-transparent opacity-15 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
 
-        <div className="relative z-10 text-center">
-          <div className="text-8xl mb-6">🚂</div>
-          <h2 className="heading-2 text-white mb-4">TicketShare</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Smart Train Ticket Rebooking Platform
+        <div className="relative z-10 text-center max-w-sm animate-slide-in-left">
+          <div className="text-9xl mb-8 animate-float filter drop-shadow-2xl">🚂</div>
+          <h2 className="text-5xl font-black mb-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-transparent bg-clip-text">TicketShare</h2>
+          <p className="text-2xl text-blue-100 mb-12 font-light">
+            Smart Train Ticket Rebooking
           </p>
-          <div className="space-y-4 text-left">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✓</span>
-              <span>Save up to 60% on train tickets</span>
+          <div className="space-y-4 text-left bg-gradient-to-br from-white from-10% to-slate-100 bg-opacity-10 backdrop-blur-xl rounded-2xl p-8 border border-white border-opacity-20 shadow-2xl">
+            <div className="flex items-center gap-3 group">
+              <span className="text-2xl bg-gradient-to-br from-green-400 to-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg group-hover:scale-110 transition-transform">✓</span>
+              <span className="text-lg font-medium">Save up to 60% on train tickets</span>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✓</span>
-              <span>100% secure and verified transactions</span>
+            <div className="flex items-center gap-3 group">
+              <span className="text-2xl bg-gradient-to-br from-green-400 to-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg group-hover:scale-110 transition-transform">✓</span>
+              <span className="text-lg font-medium">100% secure transactions</span>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✓</span>
-              <span>Buy or sell in just minutes</span>
+            <div className="flex items-center gap-3 group">
+              <span className="text-2xl bg-gradient-to-br from-green-400 to-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg group-hover:scale-110 transition-transform">✓</span>
+              <span className="text-lg font-medium">Complete in just minutes</span>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✓</span>
-              <span>Join 45K+ happy travelers</span>
+            <div className="flex items-center gap-3 group">
+              <span className="text-2xl bg-gradient-to-br from-green-400 to-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg group-hover:scale-110 transition-transform">✓</span>
+              <span className="text-lg font-medium">Join 45K+ happy travelers</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Right Side - Form */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 bg-background">
-        <div className="w-full max-w-md">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-transparent rounded-full blur-3xl opacity-40"></div>
+        </div>
+
+        <div className="w-full max-w-md animate-fade-in">
           {/* Back Button */}
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-text-secondary hover:text-primary transition mb-8"
+            className="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-all font-bold mb-12 group transform hover:-translate-x-1"
           >
-            ← Back to Home
+            <span className="text-xl group-hover:scale-125 transition-transform">←</span>
+            Back to Home
           </button>
 
           {/* Form Header */}
-          <div className="mb-8 fade-in">
-            <h1 className="heading-2 text-foreground mb-2">
-              {isLogin ? 'Welcome Back' : 'Create Account'}
+          <div className="mb-10">
+            <h1 className="text-5xl font-black text-slate-900 mb-3 bg-gradient-to-r from-blue-600 to-purple-700 text-transparent bg-clip-text">
+              {isLogin ? '👋 Welcome Back' : '🎉 Join Now'}
             </h1>
-            <p className="text-text-secondary">
+            <p className="text-xl text-slate-600 font-light">
               {isLogin 
-                ? 'Sign in to your TicketShare account' 
-                : 'Join TicketShare and start saving on tickets'}
+                ? 'Sign in to explore amazing deals on train tickets' 
+                : 'Create your account and start saving today'}
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4 fade-in">
+          <form onSubmit={handleSubmit} className="space-y-5 mb-8">
             {/* Name Field (Register only) */}
             {!isLogin && (
-              <div className="form-group">
-                <label className="form-label">Full Name</label>
+              <div className="animate-slide-in-up">
+                <label className="block text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider">Full Name</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="John Doe"
-                  className="form-input"
+                  className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 focus:shadow-2xl focus:shadow-blue-200 transition-all text-slate-900 placeholder-slate-400 font-medium hover:border-blue-400"
                   required={!isLogin}
                 />
               </div>
             )}
 
             {/* Email Field */}
-            <div className="form-group">
-              <label className="form-label">Email Address</label>
+            <div className="animate-slide-in-up">
+              <label className="block text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider">Email Address</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="form-input"
+                className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 focus:shadow-2xl focus:shadow-blue-200 transition-all text-slate-900 placeholder-slate-400 font-medium hover:border-blue-400"
                 required
               />
             </div>
 
             {/* Phone Field (Register only) */}
             {!isLogin && (
-              <div className="form-group">
-                <label className="form-label">Phone Number</label>
+              <div className="animate-slide-in-up">
+                <label className="block text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider">Phone Number</label>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+91 98765 43210"
-                  className="form-input"
+                  className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 focus:shadow-2xl focus:shadow-blue-200 transition-all text-slate-900 placeholder-slate-400 font-medium hover:border-blue-400"
                   required={!isLogin}
                 />
               </div>
@@ -156,26 +165,27 @@ export default function AuthPage({ onBack }) {
 
             {/* Role Field (Register only) */}
             {!isLogin && (
-              <div className="form-group">
-                <label className="form-label">I am a</label>
+              <div className="animate-slide-in-up">
+                <label className="block text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider">I am a</label>
                 <select
                   name="role"
                   value={formData.role}
                   onChange={handleChange}
-                  className="form-select"
+                  className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 focus:shadow-2xl focus:shadow-blue-200 transition-all text-slate-900 font-medium hover:border-blue-400"
                 >
                   <option value="buyer">👤 Buyer - Looking to buy tickets</option>
                   <option value="seller">📤 Seller - Want to sell tickets</option>
+                  <option value="admin">⚙️ Admin - Manage platform</option>
                 </select>
               </div>
             )}
 
             {/* Password Field */}
-            <div className="form-group">
-              <div className="flex justify-between items-center mb-2">
-                <label className="form-label">Password</label>
+            <div className="animate-slide-in-up">
+              <div className="flex justify-between items-center mb-3">
+                <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider">Password</label>
                 {isLogin && (
-                  <a href="#" className="text-primary text-sm font-semibold hover:underline">
+                  <a href="#" className="text-blue-600 text-sm font-bold hover:text-blue-700 transition-colors">
                     Forgot?
                   </a>
                 )}
@@ -187,15 +197,15 @@ export default function AuthPage({ onBack }) {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="form-input pr-10"
+                  className="w-full px-5 py-4 pr-14 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 focus:shadow-2xl focus:shadow-blue-200 transition-all text-slate-900 placeholder-slate-400 font-medium hover:border-blue-400"
                   required
                 />
                 <button
                   type="button"
                   onClick={togglePasswordVisibility}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary hover:text-primary"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-600 hover:text-blue-600 transition-colors text-2xl hover:scale-125 active:scale-95"
                 >
-                  {showPassword ? '👁️' : '👁️‍🗨️'}
+                  {showPassword ? '👁️' : '🙈'}
                 </button>
               </div>
             </div>
@@ -204,31 +214,35 @@ export default function AuthPage({ onBack }) {
             <button
               type="submit"
               disabled={loading}
-              className="btn btn-primary btn-large w-full mt-6"
+              className="w-full py-4 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 text-white font-bold rounded-full hover:shadow-2xl hover:shadow-blue-400 transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed mt-4 text-lg uppercase tracking-wider"
             >
               {loading ? '⏳ Loading...' : (isLogin ? '🔓 Sign In' : '✨ Create Account')}
             </button>
           </form>
 
           {/* Divider */}
-          <div className="relative my-6">
+          <div className="relative my-8">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-border"></div>
+              <div className="w-full border-t-2 border-slate-200"></div>
             </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-background text-text-secondary">or</span>
+            <div className="relative flex justify-center">
+              <span className="px-4 bg-white text-slate-600 font-bold text-sm uppercase tracking-wider">Or continue with</span>
             </div>
           </div>
 
-          {/* Social Login (Future) */}
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <button className="btn btn-outline w-full">Google</button>
-            <button className="btn btn-outline w-full">Apple</button>
+          {/* Social Login */}
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <button type="button" className="py-3 border-2 border-slate-300 text-slate-700 font-bold rounded-full hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 transform hover:scale-105 active:scale-95 text-lg">
+              Google
+            </button>
+            <button type="button" className="py-3 border-2 border-slate-300 text-slate-700 font-bold rounded-full hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 transform hover:scale-105 active:scale-95 text-lg">
+              Apple
+            </button>
           </div>
 
           {/* Toggle Login/Register */}
           <div className="text-center">
-            <p className="text-text-secondary">
+            <p className="text-slate-700 font-medium">
               {isLogin ? "Don't have an account?" : 'Already have an account?'}
               {' '}
               <button
@@ -243,19 +257,20 @@ export default function AuthPage({ onBack }) {
                   });
                   setShowPassword(false);
                 }}
-                className="text-primary font-bold hover:underline"
+                className="text-blue-600 font-bold hover:text-blue-700 transition-all transform hover:scale-105 active:scale-95"
               >
                 {isLogin ? 'Register Now' : 'Sign In'}
               </button>
             </p>
+            </p>
           </div>
 
           {/* Terms */}
-          <p className="text-xs text-text-tertiary text-center mt-6">
+          <p className="text-xs text-slate-500 text-center mt-6">
             By continuing, you agree to our{' '}
-            <a href="#" className="text-primary hover:underline">Terms of Service</a>
+            <a href="#" className="text-blue-600 hover:underline font-semibold">Terms of Service</a>
             {' '}and{' '}
-            <a href="#" className="text-primary hover:underline">Privacy Policy</a>
+            <a href="#" className="text-blue-600 hover:underline font-semibold">Privacy Policy</a>
           </p>
         </div>
       </div>
